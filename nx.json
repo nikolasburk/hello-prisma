@@ -1,0 +1,43 @@
+{
+  "npmScope": "stator",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "workspace.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "accessToken": "nx_cloud_token",
+        "cacheableOperations": ["build", "lint", "e2e"],
+        "cacheDirectory": ".cache/nx",
+        "canTrackAnalytics": false,
+        "showUsageWarnings": true
+      }
+    }
+  },
+  "projects": {
+    "api": {
+      "tags": []
+    },
+    "webapp": {
+      "tags": []
+    },
+    "webapp-e2e": {
+      "tags": [],
+      "implicitDependencies": ["webapp"]
+    },
+    "models": {
+      "tags": []
+    }
+  }
+}
